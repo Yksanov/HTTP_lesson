@@ -1,0 +1,15 @@
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\bin\Debug\net8.0\lesson_HTTP.exe
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\bin\Debug\net8.0\lesson_HTTP.deps.json
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\bin\Debug\net8.0\lesson_HTTP.runtimeconfig.json
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\bin\Debug\net8.0\lesson_HTTP.dll
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\bin\Debug\net8.0\lesson_HTTP.pdb
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.GeneratedMSBuildEditorConfig.editorconfig
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.AssemblyInfoInputs.cache
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.AssemblyInfo.cs
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.csproj.CoreCompileInputs.cache
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.sourcelink.json
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.dll
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\refint\lesson_HTTP.dll
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.pdb
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\lesson_HTTP.genruntimeconfig.cache
+D:\Attractor\month#2\lesson_HTTP\lesson_HTTP\obj\Debug\net8.0\ref\lesson_HTTP.dll
