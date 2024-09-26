@@ -41,17 +41,29 @@ public class MyServer
         Console.WriteLine(context.Request.HttpMethod);
         string filename = context.Request.Url.AbsolutePath;
         Console.WriteLine(filename);
-        filename = _siteDirectory + filename;
+        
 
-        string page = filename;
+        string page = filename.Trim();
         if (!Path.HasExtension(page))
         {
-            string responcePage = $"<h1> {page} </h1>";
-            byte[] buffer = Encoding.UTF8.GetBytes(responcePage);
-            context.Response.ContentType = "text/html";
-            context.Response.ContentLength64 = buffer.Length;
-            context.Response.OutputStream.Write(buffer, 0, buffer.Length);
+            try
+            {
+                page = page.Substring(1);
+                string responcepage = $"<html><head><meta charset='utf8'></head><body><h1>{page}</h1></body></html>";
+                byte[] buffer = Encoding.UTF8.GetBytes(responcepage);
+                context.Response.ContentType = GetContentType(filename);
+                context.Response.ContentLength64 = buffer.Length;
+                context.Response.OutputStream.Write(buffer, 0, buffer.Length);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                context.Response.OutputStream.Write(new byte[0]);
+            }
         }
+        
+        filename = _siteDirectory + filename;
         if (File.Exists(filename))
         {
             try

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lesson_HTTP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c49e1b41c512c7fcb890a08a5d56dd8b5612f6cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd8816b434bca169f471fcaa312a78fe4ae31bd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("lesson_HTTP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lesson_HTTP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
