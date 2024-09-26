@@ -1,4 +1,5 @@
 using System.Net;
+using System.Text;
 
 namespace lesson_HTTP;
 
@@ -41,6 +42,16 @@ public class MyServer
         string filename = context.Request.Url.AbsolutePath;
         Console.WriteLine(filename);
         filename = _siteDirectory + filename;
+
+        string page = filename;
+        if (!Path.HasExtension(page))
+        {
+            string responcePage = $"<h1> {page} </h1>";
+            byte[] buffer = Encoding.UTF8.GetBytes(responcePage);
+            context.Response.ContentType = "text/html";
+            context.Response.ContentLength64 = buffer.Length;
+            context.Response.OutputStream.Write(buffer, 0, buffer.Length);
+        }
         if (File.Exists(filename))
         {
             try
