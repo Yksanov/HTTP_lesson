@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson_HTTP", "lesson_HTTP\lesson_HTTP.csproj", "{29BC1796-9978-46C2-BEF8-E2F91FB42AF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_2", "Task_2\Task_2.csproj", "{81B99B76-F2BA-46B8-BCC3-A330E6BB3917}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{29BC1796-9978-46C2-BEF8-E2F91FB42AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BC1796-9978-46C2-BEF8-E2F91FB42AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29BC1796-9978-46C2-BEF8-E2F91FB42AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B99B76-F2BA-46B8-BCC3-A330E6BB3917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B99B76-F2BA-46B8-BCC3-A330E6BB3917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B99B76-F2BA-46B8-BCC3-A330E6BB3917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B99B76-F2BA-46B8-BCC3-A330E6BB3917}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

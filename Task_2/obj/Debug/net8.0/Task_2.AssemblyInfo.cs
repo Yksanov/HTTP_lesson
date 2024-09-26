@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("lesson_HTTP")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Task_2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2910d872b283d0539b69d10d838519cc06b12a9")]
-[assembly: System.Reflection.AssemblyProductAttribute("lesson_HTTP")]
-[assembly: System.Reflection.AssemblyTitleAttribute("lesson_HTTP")]
+[assembly: System.Reflection.AssemblyProductAttribute("Task_2")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Task_2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
