@@ -6,6 +6,8 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        try
+        {
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:5000/mysite/");
             listener.Prefixes.Add("http://localhost:5000/white_rabbit/");
@@ -25,6 +27,13 @@ class Program
                                               <meta charset='utf-8'>
                                           </head>
                                           <body>
+                                              <style type="text/css">
+                                             body {
+                                               color: red;
+                                               background-color: yellow;
+                                               text-align: center;
+                                             }
+                                              </style>
                                             <div>
                                                 <h1> Follow the white rabbit </h1>
                                             </div>
@@ -45,6 +54,13 @@ class Program
                                        <meta charset='utf-8'>
                                    </head>
                                    <body>
+                                           <style type="text/css">
+                                        body {
+                                          color: green;
+                                          background-color: #FF7F50;
+                                          text-align: center;
+                                        }
+                                         </style>
                                        <h1> You are living in the matrix </h1>
                                    </body>
                                 </html>
@@ -77,5 +93,10 @@ class Program
             context.Response.OutputStream.Close();
             listener.Close();
             listener.Stop();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
