@@ -9,3 +9,18 @@
 .h-text{
     text-align: center;
 }
+
+h1{
+    background-color: red;
+}
+
+.h3-text{
+    background-color: lawngreen;
+    
+}
+h3{
+    text-align: center;
+}
+.submit-btn{
+    margin-bottom: 50px;
+}

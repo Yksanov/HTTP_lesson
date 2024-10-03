@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "John Smith",
+    "Age": 50
+  },
+  {
+    "Id": 2,
+    "Name": "Anny Jackson",
+    "Age": 94
+  },
+  {
+    "Id": 3,
+    "Name": "Freddy Jackson",
+    "Age": 19
+  },
+  {
+    "Id": 4,
+    "Name": "Rick Doe",
+    "Age": 34
+  }
+]

@@ -1,5 +1,8 @@
 using System.Net;
-using System.Text;
+using System.Runtime.InteropServices.JavaScript;
+using RazorEngine;
+using RazorEngine.Templating;
+using Encoding = System.Text.Encoding;
 
 namespace lesson_HTTP;
 
@@ -19,7 +22,6 @@ public class MyServer
         Console.WriteLine($"Server started on {_port} \nFiles in {_siteDirectory}");
         await ListenAsync();
     }
-
     private async Task ListenAsync()
     {
         try
@@ -41,8 +43,6 @@ public class MyServer
         Console.WriteLine(context.Request.HttpMethod);
         string filename = context.Request.Url.AbsolutePath;
         Console.WriteLine(filename);
-        
-
         string page = filename.Trim();
         if (!Path.HasExtension(page))
         {
@@ -68,18 +68,31 @@ public class MyServer
         {
             try
             {
-                Stream fileStream = File.Open(filename, FileMode.Open);
-                context.Response.ContentType = GetContentType(filename);
-                context.Response.ContentLength64 = fileStream.Length;
-                byte[] buffer =  new byte[16 * 1024];
-                int dataLength;
-                do
+                if (context.Request.HttpMethod == "POST")  //
                 {
-                    dataLength = fileStream.Read(buffer, 0, buffer.Length);
-                    context.Response.OutputStream.Write(buffer, 0, dataLength);
+                    StreamReader str = new StreamReader(context.Request.InputStream);
+                    string result = str.ReadToEnd();
+                    Console.WriteLine(result);
+                }
+                string content= "";
+                string IdFrom = context.Request.QueryString["IdFrom"];
+                string IdTo = context.Request.QueryString["IdTo"];
 
-                } while (dataLength > 0);
-                fileStream.Close();
+                List<Employee> employees = Serializer.GetEmployees();
+                List<Employee> filterId = employees;
+
+                if (int.TryParse(IdFrom, out int idFrom) && int.TryParse(IdTo, out int idTo))
+                {
+                    filterId = employees.Where(e => e.Id >= idFrom && e.Id <= idTo).ToList();
+                }
+
+                content = BuildHtml(filename, filterId);
+                
+                
+                context.Response.ContentType = GetContentType(filename);
+                context.Response.ContentLength64 = System.Text.Encoding.UTF8.GetBytes(content).Length;
+                byte[] buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                context.Response.OutputStream.Write(buffer, 0, buffer.Length);
                 context.Response.OutputStream.Flush();
             }
             catch (Exception ex)
@@ -95,6 +108,23 @@ public class MyServer
             context.Response.OutputStream.Write(new byte[0]);
         }
         context.Response.OutputStream.Close();
+    }
+
+    private string BuildHtml(string filename, List<Employee> employees)
+    {
+        string html = "";
+        string layoutPath = _siteDirectory + "/layout.html";
+        var razorService = Engine.Razor;
+        if (!razorService.IsTemplateCached("layout", null))
+            razorService.AddTemplate("layout", File.ReadAllText(layoutPath));
+        if (!razorService.IsTemplateCached(filename, null))
+        {
+            razorService.AddTemplate(filename, File.ReadAllText(filename));
+            razorService.Compile(filename);
+        }
+        var viewModel = new { Employees = employees };
+        html = razorService.Run(filename, null, viewModel);
+        return html;
     }
 
     private string? GetContentType(string filename)
@@ -114,7 +144,6 @@ public class MyServer
         Dictionary.TryGetValue(extension, out contentype);
         return contentype;
     }
-
     public void Stop()
     {
         _listener.Abort();
