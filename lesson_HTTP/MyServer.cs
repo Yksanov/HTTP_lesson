@@ -68,7 +68,7 @@ public class MyServer
         {
             try
             {
-                if (context.Request.HttpMethod == "POST")  //
+                if (context.Request.HttpMethod == "POST")  // 2 Task
                 {
                     StreamReader str = new StreamReader(context.Request.InputStream);
                     string result = str.ReadToEnd();
